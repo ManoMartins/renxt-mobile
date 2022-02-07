@@ -6,6 +6,7 @@ import Logo from '../../assets/logo.svg';
 import { Car } from '../../components/Car';
 
 import {
+  CarList,
   Container, Header, HeaderContent, TotalCars,
 } from './styles';
 
@@ -40,7 +41,11 @@ export function Home() {
         </HeaderContent>
       </Header>
 
-      <Car {...carDetail} />
+      <CarList 
+        data={[1, 2, 3, 4, 5, 6, 7, 8]}
+        keyExtractor={(item) => String(item)}
+        renderItem={({ item }) => <Car {...carDetail} />}
+      />
     </Container>
   );
 }
